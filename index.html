@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=no">
+  <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.1/css/all.min.css" integrity="sha512-KfkfwYDsLkIlwQp6LFnl8zNdLGxu9YAA1QvwINks4PhcElQSvqcyVLLD9aMhXd13uQjoXtEKNosOWaZqXgel0g==" crossorigin="anonymous" referrerpolicy="no-referrer" />
+  <link rel="stylesheet" href="estilo.css">
+  <title>Ana Gaitan UI/UX</title>
+
+  <style>
+    #btn-idioma {
+      position: fixed;
+      top: 20px;
+      right: 20px;
+      background-color: #007BFF;
+      color: white;
+      border: none;
+      padding: 10px 15px;
+      border-radius: 8px;
+      font-size: 16px;
+      cursor: pointer;
+      z-index: 1000;
+      box-shadow: 0 4px 6px rgba(0, 0, 0, 0.2);
+      transition: background-color 0.3s ease;
+    }
+
+    #btn-idioma:hover {
+      background-color: #0056b3;
+    }
+  </style>
+</head>
+
+<body>
+
+  <button id="btn-idioma" onclick="traducir()">🌐 English</button>
+
+  <!-- SECCION INICIO -->
+  <section id="inicio" style="position: relative;">
+    <div class="logo" style="position: absolute; top: 40px; left: 5%; transform: translateX(-50%); z-index: 10;">
+      <img src="LOGO-P.png" alt="Logo" style="height: 150px;">
+    </div>
+
+    <div class="contenido">
+      <header>
+        <div class="contenido-header">
+          <nav id="nav" class="">
+            <ul id="links">
+              <li><a href="#inicio" class="seleccionado" onclick="seleccionar(this)" id="nav-inicio">INICIO</a></li>
+              <li><a href="#sobremi" onclick="seleccionar(this)" id="nav-sobremi">SOBRE MI</a></li>
+              <li><a href="#intereses" onclick="seleccionar(this)" id="nav-intereses">INTERESES</a></li>
+              <li><a href="#habilidades" onclick="seleccionar(this)" id="nav-habilidades">HABILIDADES</a></li>
+              <li><a href="#proyectos" onclick="seleccionar(this)" id="nav-proyectos">PROYECTOS</a></li>
+              <li><a href="#contacto" onclick="seleccionar(this)" id="nav-contacto">CONTACTO</a></li>
+            </ul>
+          </nav>
+
+          <!-- Icono del menu responsive -->
+          <div id="icono-nav" onclick="responsiveMenu()">
+            <i class="fa-solid fa-bars"></i>
+          </div>
+
+          <div class="redes">
+            <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><i class="fa-brands fa-linkedin"></i></a>
+            <a href="https://github.com/patriciagaitan21"><i class="fa-brands fa-github"></i></a>
+          </div>
+        </div>
+      </header>
+
+      <div class="presentacion">
+        <p class="bienvenida" id="bienvenida">Bienvenidos</p>
+        <h2 id="presentacion">Soy <span>Ana Gaitan</span>, Diseñador UX/UI</h2>
+        <a href="#portfolio" id="ir-portafolio">Ir a Portafolio</a>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCION SOBRE MI -->
+  <section id="sobremi">
+    <div class="contenedor-foto">
+      <img src="imagen-uno.jpg" alt="">
+    </div>
+    <div class="sobremi">
+      <p class="titulo-seccion" id="titulo-sobremi">Sobre Mi</p>
+       <h2 id="saludo">Hola Soy <span>Ana Gaitan</span>,</h2>
+      <h3 id="profesion">Diseñador UX/UI</h3>
+      <p id="descripcion-sobremi">
+        Me apasiona el diseño, innovar y crear y aportar 
+        valor para la mejora de experiencia de los usuarios,
+        me considero una persona creativa, resolutiva y en constante aprendizaje, 
+        siempre en busca de nuevos retos que me permitan seguir creciendo profesionalmente,
+        y unos de mis pasamientos favoritos es buscar mucho mas conocimiento en ciertos temas de interes,
+        y tambien hacer ejercicio.
+      </p>
+      <a href="CV-ANNIE.pdf" id="descargar-cv">Descargar CV</a>
+    </div>
+  </section>
+
+  <!-- SECCION I N T E R E S E S -->
+    <section id="intereses">
+        <h3 class="titulo-seccion" id="titulo-intereses">MIS INTERESES</h3>
+        <div class="fila">
+            <div class="interes">
+                <span class="icono"> <i class="fa-solid fa-code"></i></span>
+                <h4 id="titulo-redes">Redes</h4>
+                <hr>
+                <p id="texto-redes">Me interesa el área de redes porque me gusta entender cómo se comunican los dispositivos, configurar infraestructuras eficientes y asegurar una conectividad estable y segura. Disfruto resolver problemas de comunicación y optimizar el flujo de datos en entornos reales.</p>
+            </div>
+            <div class="interes">
+                <span class="icono"><i class="fa-solid fa-file-code"></i></span>
+                <h4 id="titulo-uxui">Diseño UX/UI</h4>
+                <hr>
+                <p id="texto-uxui">Ademas de poner a trabajar mi creatividad me gusta el diseño UX/UI porque me motiva crear experiencias digitales intuitivas, funcionales y visualmente atractivas. Disfruto comprender las necesidades del usuario y transformar esa información en interfaces que mejoren la interacción y usabilidad de productos tecnológicos.</p>
+
+            </div>
+            <div class="interes">
+                <span class="icono"><i class="fa-solid fa-arrow-trend-up"></i></span>
+                <h4 id="titulo-electronica">Electronica</h4>
+                <p id="texto-electronica">Me interesa la electrónica porque me apasiona entender y trabajar con circuitos, dispositivos y sistemas que hacen posible el funcionamiento de la tecnología. Disfruto diseñar, construir y resolver problemas técnicos, explorando cómo la electrónica transforma ideas en soluciones prácticas.</p>
+            </div>
+        </div>
+        <div class="fila">
+            
+            </div>
+            
+            </div>
+          
+            </div>
+        </div>
+    </section>
+
+  <!-- SECCION HABILIDADES -->
+  <div class="contenedor-skills" id="skills">
+    <h3 id="titulo-habilidades">HABILIDADES</h3>
+    <div class="skill">
+      <div class="info">
+        <p><span class="lista"></span><span id="skill-html">Html & Css</span></p>
+        <span class="porcentaje">80%</span>
+      </div>
+      <div class="barra">
+        <div id="html"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="info">
+        <p><span class="lista"></span><span id="skill-diseno">Diseño</span></p>
+        <span class="porcentaje">80%</span>
+      </div>
+      <div class="barra">
+        <div id="js"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="info">
+        <p><span class="lista"></span><span id="skill-redes">Redes</span></p>
+        <span class="porcentaje">90%</span>
+      </div>
+      <div class="barra">
+        <div id="bd"></div>
+      </div>
+    </div>
+    <div class="skill">
+      <div class="info">
+        <p><span class="lista"></span><span id="skill-electronica">Electronica</span></p>
+        <span class="porcentaje">90%</span>
+      </div>
+      <div class="barra">
+        <div id="ps"></div>
+      </div>
+    </div>
+  </div>
+
+  <!-- SECCION PROYECTOS -->
+  <section id="portfolio">
+    <h3 class="titulo-seccion" id="mis-proyectos">Mis Proyectos</h3>
+    <div class="fila">
+      <!-- Proyecto 1 -->
+      <div class="proyecto">
+        <div class="overlay"></div>
+        <img src="robot1.jpg" alt="">
+        <div class="info">
+          <h4>Robot Car</h4>
+          <p>Un robot que consiste en detectar obstáculos y esquivarlos</p>
+          <a href="robot.jpg" target="_blank" class="ver-imagen-btn">Ver Fotografía de Proyecto</a>
+        </div>
+      </div>
+
+      <!-- Proyecto 2 -->
+      <div class="proyecto">
+        <div class="overlay"></div>
+        <img src="redes1.jpg" alt="">
+        <div class="info">
+          <p>Redes Públicas</p>
+          <h4>Distribuidora de alimentos agrícolas, monitoreo de rutas de repartidores en zona oriental.</h4>
+          <a href="Redes.jpg" target="_blank" class="ver-imagen-btn">Ver Fotografía de Proyecto</a>
+        </div>
+      </div>
+
+      <!-- Proyecto 3 -->
+      <div class="proyecto">
+        <div class="overlay"></div>
+        <img src="CRUD1.jpg" alt="">
+        <div class="info">
+          <p>Programación</p>
+          <h4>Desarrollo básico de CRUD: eliminar, buscar, guardar, modificar formularios.</h4>
+          <a href="CRUD.jpg" target="_blank" class="ver-imagen-btn">Ver Fotografía de Proyecto</a>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <!-- SECCTION C O N T A C T O -->
+    <section id="contacto">
+        <h3 class="titulo-seccion" id="titulo-contacto">Contactanos ahora</h3>
+        <div class="contenedor-form">
+            <form id="contact-form" action="https://formsubmit.co/pathygaitan26@gmail.com" method="POST" target="hidden_iframe">
+  <input type="hidden" name="_captcha" value="false">
+  <input type="hidden" name="_template" value="table">
+  <input type="hidden" name="_next" value="#">
+
+  <div class="fila mitad">
+    <input type="text" name="nombre" placeholder="Nombre Completo *" class="input-mitad" id="input-nombre" required>
+    <input type="email" name="email" placeholder="Dirección de Email" class="input-mitad" id="input-email" required>
+  </div>
+  <div class="fila">
+    <input type="text" name="tema" placeholder="Tema..." class="input-full" id="input-tema">
+  </div>
+  <div class="fila">
+    <textarea name="mensaje" placeholder="Tu Mensaje..." class="input-full" id="input-mensaje" required></textarea>
+  </div>
+  <input type="submit" value="Enviar Mensaje" class="btn-enviar" id="btn-enviar">
+</form>
+
+<div id="mensaje-envio" style="display:none; color: green; margin-top: 15px; font-weight: bold;">
+  Gracias por contactarme, responderé lo más pronto posible.
+</div>
+
+<iframe name="hidden_iframe" style="display:none;"></iframe>
+
+        </div>
+    </section>
+
+  <!-- FOOTER -->
+  <footer>
+    <p id="footer-texto">Ana Gaitan Todos los derechos reservados - 2025</p>
+    <div class="redes">
+      <a href="https://www.linkedin.com/public-profile/settings?trk=d_flagship3_profile_self_view_public_profile"><i class="fa-brands fa-linkedin"></i></a>
+      <a href="https://github.com/patriciagaitan21"><i class="fa-brands fa-github"></i></a>
+    </div>
+  </footer>
+
+  <script>
+    let idioma = 'es';
+
+    function traducir() {
+      if (idioma === 'es') {
+        // Nav
+        document.getElementById("nav-inicio").textContent = "HOME";
+        document.getElementById("nav-sobremi").textContent = "ABOUT ME";
+        document.getElementById("nav-proyectos").textContent = "PROJECTS";
+        document.getElementById("nav-intereses").textContent = "INTERESTS";
+        document.getElementById("nav-contacto").textContent = "CONTACT";
+        document.getElementById("nav-habilidades").textContent = "SKILLS";
+        document.getElementById("btn-idioma").innerHTML = "🌐 Español";
+
+        // Presentación
+        document.getElementById("bienvenida").textContent = "Welcome";
+        document.getElementById("presentacion").innerHTML = 'I am <span>Ana Gaitan</span>, UX/UI Designer';
+        document.getElementById("ir-portafolio").textContent = "Go to Portfolio";
+
+        // Sobre mí
+        document.getElementById("titulo-sobremi").textContent = "About Me";
+        document.getElementById("saludo").textContent = "Hello, I'm Ana Gaitán";
+        document.getElementById("profesion").textContent = "UX/UI Designer";
+        document.getElementById("descripcion-sobremi").textContent = "I am passionate about design, innovating, creating, and providing value to improve the user experience. I am a creative, problem-solving, and constantly learning person, always seeking new challenges for professional growth. One of my favorite hobbies is acquiring more knowledge and staying active through exercise.";
+        document.getElementById("descargar-cv").textContent = "Download CV";
+
+        // Intereses
+        document.getElementById("titulo-intereses").textContent = "MY INTERESTS";
+        document.getElementById("titulo-redes").textContent = "Networks";
+        document.getElementById("texto-redes").textContent = "I'm interested in networking because I enjoy understanding how devices communicate, configuring efficient infrastructures, and ensuring stable and secure connectivity. I like solving communication problems and optimizing data flow in real environments.";
+
+        document.getElementById("titulo-uxui").textContent = "UX/UI Design";
+        document.getElementById("texto-uxui").textContent = "In addition to using my creativity, I enjoy UX/UI design because it motivates me to create intuitive, functional, and visually appealing digital experiences. I enjoy understanding user needs and transforming that into interfaces that improve product usability.";
+
+        document.getElementById("titulo-electronica").textContent = "Electronics";
+        document.getElementById("texto-electronica").textContent = "I'm interested in electronics because I’m passionate about working with circuits, devices, and systems that enable technology. I enjoy designing, building, and solving technical problems, exploring how electronics turn ideas into practical solutions.";
+
+        // Habilidades
+        document.getElementById("titulo-habilidades").textContent = "SKILLS";
+        document.getElementById("skill-html").textContent = "Html & Css";
+        document.getElementById("skill-diseno").textContent = "Design";
+        document.getElementById("skill-redes").textContent = "Networks";
+        document.getElementById("skill-electronica").textContent = "Electronics";
+
+        // Contacto
+        document.getElementById("titulo-contacto").textContent = "Contact us now";
+        document.getElementById("input-nombre").placeholder = "Full Name *";
+        document.getElementById("input-email").placeholder = "Email Address";
+        document.getElementById("input-tema").placeholder = "Subject...";
+        document.getElementById("input-mensaje").placeholder = "Your Message...";
+        document.getElementById("btn-enviar").value = "Send Message";
+
+        // Proyectos
+        document.getElementById("mis-proyectos").textContent = "My Projects";
+
+        // Footer
+        document.getElementById("footer-texto").textContent = "Ana Gaitan All rights reserved - 2025";
+
+        idioma = 'en';
+      } else {
+        // Volver a Español
+        document.getElementById("nav-inicio").textContent = "INICIO";
+        document.getElementById("nav-sobremi").textContent = "SOBRE MI";
+        document.getElementById("nav-proyectos").textContent = "PROYECTOS";
+        document.getElementById("nav-intereses").textContent = "INTERESES";
+        document.getElementById("nav-contacto").textContent = "CONTACTO";
+        document.getElementById("nav-habilidades").textContent = "HABILIDADES";
+        document.getElementById("btn-idioma").innerHTML = "🌐 English";
+
+        document.getElementById("bienvenida").textContent = "Bienvenidos";
+        document.getElementById("presentacion").innerHTML = 'Soy <span>Ana Gaitan</span>, Diseñador UX/UI';
+        document.getElementById("ir-portafolio").textContent = "Ir a Portafolio";
+
+        document.getElementById("titulo-sobremi").textContent = "Sobre Mi";
+        document.getElementById("saludo").textContent = "Hola Soy Ana  Gaitan";
+        document.getElementById("profesion").textContent = "Diseñador UX/UI";
+        document.getElementById("descripcion-sobremi").textContent = "Me apasiona el diseño, innovar y crear y aportar valor para la mejora de experiencia de los usuarios, me considero una persona creativa, resolutiva y en constante aprendizaje, siempre en busca de nuevos retos que me permitan seguir creciendo profesionalmente, y unos de mis pasamientos favoritos es buscar mucho mas conocimiento en ciertos temas de interes, y tambien hacer ejercicio.";
+        document.getElementById("descargar-cv").textContent = "Descargar CV";
+
+        document.getElementById("titulo-intereses").textContent = "MIS INTERESES";
+        document.getElementById("titulo-redes").textContent = "Redes";
+        document.getElementById("texto-redes").textContent = "Me interesa el área de redes porque me gusta entender cómo se comunican los dispositivos, configurar infraestructuras eficientes y asegurar una conectividad estable y segura. Disfruto resolver problemas de comunicación y optimizar el flujo de datos en entornos reales.";
+
+        document.getElementById("titulo-uxui").textContent = "Diseño UX/UI";
+        document.getElementById("texto-uxui").textContent = "ademas de poner a trabajar mi creatividad me gusta el diseño UX/UI porque me motiva crear experiencias digitales intuitivas, funcionales y visualmente atractivas. Disfruto comprender las necesidades del usuario y transformar esa información en interfaces que mejoren la interacción y usabilidad de productos tecnológicos.";
+
+        document.getElementById("titulo-electronica").textContent = "Electronica";
+        document.getElementById("texto-electronica").textContent = "Me interesa la electrónica porque me apasiona entender y trabajar con circuitos, dispositivos y sistemas que hacen posible el funcionamiento de la tecnología. Disfruto diseñar, construir y resolver problemas técnicos, explorando cómo la electrónica transforma ideas en soluciones prácticas.";
+
+        document.getElementById("titulo-habilidades").textContent = "HABILIDADES";
+        document.getElementById("skill-html").textContent = "Html & Css";
+        document.getElementById("skill-diseno").textContent = "Diseño";
+        document.getElementById("skill-redes").textContent = "Redes";
+        document.getElementById("skill-electronica").textContent = "Electronica";
+
+        document.getElementById("titulo-contacto").textContent = "Contactanos ahora";
+        document.getElementById("input-nombre").placeholder = "Nombre Completo *";
+        document.getElementById("input-email").placeholder = "Dirección de Email";
+        document.getElementById("input-tema").placeholder = "Tema...";
+        document.getElementById("input-mensaje").placeholder = "Tu Mensaje...";
+        document.getElementById("btn-enviar").value = "Enviar Mensaje";
+
+        document.getElementById("mis-proyectos").textContent = "Mis Proyectos";
+
+        document.getElementById("footer-texto").textContent = "Ana Gaitan Todos los derechos reservados - 2025";
+
+        idioma = 'es';
+      }
+    }
+  </script>
+
+  <script>
+  document.getElementById("contact-form").addEventListener("submit", function(e) {
+    e.preventDefault();
+
+    const form = e.target;
+    const formData = new FormData(form);
+
+    fetch(form.action, {
+      method: "POST",
+      body: formData,
+      headers: {
+        'Accept': 'application/json'
+      }
+    }).then(response => {
+      if (response.ok) {
+        form.reset();
+        document.getElementById("mensaje-envio").style.display = "block";
+      } else {
+        alert("Hubo un problema al enviar el formulario. Intenta nuevamente.");
+      }
+    }).catch(error => {
+      alert("Error al enviar el formulario. Intenta más tarde.");
+    });
+  });
+</script>
+ 
+
+</body>
+
+</html>
